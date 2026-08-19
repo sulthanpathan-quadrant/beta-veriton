@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta property="og:title" content="DataPlatform - Unlock the Future of Your Data" />
+    <meta property="og:description" content="The intelligent platform that transforms raw data into actionable insights instantly." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/quadrantlogo1.png" />
+    <link rel="icon" type="image/png" href="/quadrantlogo1.png" />
+ 
+    <style>
+      body::after {
+        content: "";
+        position: fixed;
+        bottom: -30px;
+        right: 20px;
+        width: 150px; /* adjust size */
+        height: auto;
+        aspect-ratio: 1 / 1;
+        background-image: url('/Ql1.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+       /* watermark effect */
+        pointer-events: none; /* IMPORTANT */
+        z-index: 999;
+      }
+    </style>
+  </head>
+ 
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+ 
+ 

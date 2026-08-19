@@ -1,0 +1,439 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+
+All colors MUST be HSL.
+
+*/
+
+@layer base {
+
+  :root {
+
+    /* LIGHT MODE COLORS */
+
+    --background: 0 0% 100%;        /* white */
+
+    --foreground: 220 15% 15%;      /* dark gray text */
+
+
+
+    --card: 0 0% 100%;              /* white */
+
+    --card-foreground: 220 15% 15%;
+
+
+
+    --popover: 0 0% 100%;
+
+    --popover-foreground: 220 15% 15%;
+
+
+
+    --primary: 267 84% 65%; 
+    --primary1: 267 84% 70%;      /* your purple */
+
+    --primary-foreground: 0 0% 100%;
+
+
+
+    --secondary: 197 100% 55%;      /* your cyan */
+
+    --secondary-foreground: 0 0% 100%;
+
+
+
+    --muted: 220 15% 90%;
+
+    --muted-foreground: 220 10% 40%;
+
+
+
+    --accent: 267 75% 80%;          
+
+    --accent-foreground: 0 0% 100%;
+
+
+
+    --destructive: 0 84.2% 60.2%;
+
+    --destructive-foreground: 0 0% 100%;
+
+
+
+    --border: 220 15% 85%;
+
+    --input: 220 15% 85%;
+
+    --ring: 267 84% 65%;
+
+
+
+    --radius: 1rem;
+
+
+
+    /* Custom colors for landing page - light mode */
+
+    --hero-gradient-start: 267 84% 65%;
+
+    --hero-gradient-end: 197 100% 55%;
+
+    --hero-gradient-accent: 330 85% 60%;
+
+    --feature-bg: 220 20% 95%;
+
+    --section-bg: 0 0% 98%;
+
+    --footer-bg: 220 20% 96%;
+
+   
+
+    /* Animations */
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+   
+
+    /* Glow effects */
+
+    --glow-primary: 0 0 60px hsl(267 84% 65% / 0.3);
+
+    --glow-secondary: 0 0 60px hsl(197 100% 55% / 0.3);
+
+  }
+
+
+
+  .dark {
+
+    /* DARK MODE COLORS - your original dark theme */
+
+    --background: 220 25% 6%;
+
+    --foreground: 210 40% 98%;
+
+
+
+    --card: 220 20% 10%;
+
+    --card-foreground: 210 40% 98%;
+
+
+
+    --popover: 220 20% 10%;
+
+    --popover-foreground: 210 40% 98%;
+
+
+
+    --primary: 267 84% 65%;
+    --primary1: 267 84% 65%;
+
+    --primary-foreground: 0 0% 100%;
+
+
+
+    --secondary: 197 100% 55%;
+
+    --secondary-foreground: 0 0% 100%;
+
+
+
+    --muted: 220 15% 20%;
+
+    --muted-foreground: 220 10% 65%;
+
+
+
+  --accent: 267 75% 80%;          
+
+    --accent-foreground: 0 0% 100%;
+
+
+
+    --destructive: 0 62.8% 50.6%;
+
+    --destructive-foreground: 0 0% 100%;
+
+
+
+    --border: 220 15% 18%;
+
+    --input: 220 15% 18%;
+
+    --ring: 267 84% 65%;
+
+
+
+    --hero-gradient-start: 267 84% 65%;
+
+    --hero-gradient-end: 197 100% 55%;
+
+    --hero-gradient-accent: 330 85% 60%;
+
+    --feature-bg: 220 22% 8%;
+
+    --section-bg: 220 25% 6%;
+
+    --footer-bg: 220 30% 4%;
+
+  }
+
+}
+
+
+
+@layer base {
+
+  * {
+
+    @apply border-border;
+
+  }
+
+
+
+  body {
+
+    @apply bg-background text-foreground;
+
+  }
+
+
+
+  html {
+
+    scroll-behavior: smooth;
+
+  }
+
+}
+
+
+
+@layer utilities {
+
+  .animate-fade-in {
+
+    animation: fadeIn 0.6s ease-out forwards;
+
+  }
+
+
+
+  .animate-slide-up {
+
+    animation: slideUp 0.6s ease-out forwards;
+
+  }
+
+
+
+  @keyframes fadeIn {
+
+    from {
+
+      opacity: 0;
+
+    }
+
+    to {
+
+      opacity: 1;
+
+    }
+
+  }
+
+
+
+  @keyframes slideUp {
+
+    from {
+
+      opacity: 0;
+
+      transform: translateY(20px);
+
+    }
+
+    to {
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+    }
+
+  }
+
+
+
+  @keyframes wave {
+
+    0% {
+
+      transform: translate(0, 0) scale(1.1);
+
+    }
+
+    25% {
+
+      transform: translate(-2%, 1%) scale(1.12);
+
+    }
+
+    50% {
+
+      transform: translate(0, -2%) scale(1.15);
+
+    }
+
+    75% {
+
+      transform: translate(2%, 1%) scale(1.12);
+
+    }
+
+    100% {
+
+      transform: translate(0, 0) scale(1.1);
+
+    }
+
+  }
+
+
+
+  .animate-wave {
+
+    animation: wave 25s ease-in-out infinite;
+
+  }
+
+}
+
+
+
+
+
+@layer base {
+
+  /* Existing code... */
+
+
+
+  /* Force dark mode on landing pages, even if <html> has no .dark class */
+
+  .forced-dark {
+
+    --background: 22 5% %;
+
+    --foreground: 21 10% 98%;
+
+    --card: 220 20% 10%;
+
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 10%;
+
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 267 84% 65%;
+
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 197 100% 55%;
+
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 20%;
+
+    --muted-foreground: 220 10% 65%;
+
+    --accent: 330 85% 60%;
+
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50.6%;
+
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+
+    --input: 220 15% 18%;
+
+    --ring: 267 84% 65%;
+
+    --feature-bg: 220 22% 8%;
+
+    --section-bg: 220 25% 6%;
+
+    --footer-bg: 220 30% 4%;
+
+  }
+
+
+
+  /* Ensure body uses these forced variables */
+
+  .forced-dark {
+
+    @apply bg-background text-foreground;
+
+  }
+
+
+
+  .forced-dark * {
+
+    @apply border-border;
+
+  }
+
+}
+
+
+
+
+
+ 
+/* ReactFlow Controls Theme */
+.react-flow__controls {
+  background: hsl(var(--card)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
+}
+ 
+.react-flow__controls-button {
+  background: hsl(var(--card)) !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+  fill: hsl(var(--foreground)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+ 
+.react-flow__controls-button:hover {
+  background: hsl(var(--muted)) !important;
+}
+ 
+.react-flow__controls-button svg {
+  fill: hsl(var(--foreground)) !important;
+}
+ 
+ 
+ .react-flow__background {
+  background-color: hsl(var(--card)) !important;
+}
+
+.react-flow__background pattern circle,
+.react-flow__background pattern rect {
+  fill: hsl(var(--border)) !important;
+}
